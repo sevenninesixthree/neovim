@@ -20,8 +20,12 @@ jobs:
         mkdir -p my-nvim
         make install DESTDIR=$(pwd)/my-nvim
 
+    - name: Comp
+      run: |
+        tar czvf nvim-ubuntu22.04.tar.gz -C my-nvim/usr/local
+
     - name: Uploat artifact
       uses: actions/upload-artifact@v3
       with:
         name: test
-        path: my-nvim
+        path: nvim-ubuntu22.04.tar.gz
