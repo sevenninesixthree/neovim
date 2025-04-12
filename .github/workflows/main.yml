@@ -22,10 +22,10 @@ jobs:
 
     - name: Comp
       run: |
-        tar czvf nvim-ubuntu22.04.tar.gz -C my-nvim/usr/local
+        tar czvf nvim-ubuntu22.04-arm.tar.gz -C my-nvim/usr/local .
 
     - name: Uploat artifact
       uses: actions/upload-artifact@v4
       with:
         name: test
-        path: nvim-ubuntu22.04.tar.gz
+        path: nvim-ubuntu22.04-arm.tar.gz
